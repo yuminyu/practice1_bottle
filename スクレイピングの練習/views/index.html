@@ -6,12 +6,73 @@
     <link rel="stylesheet" href = "/static/css/style.css" >
 </head>
 <body>
-<h4>こんにちは</h4>
+
+<div class="now_list">
+<h3>新しく出たバッグリスト</h3>
+<p>商品数は{{count_new_bag}}</p>
+　<!--自戒：ここから下はインデントしないようにする -->
 <ul>
-% for listt in bags_list:
-    <li>{{listt}}</li>
+% for bag in new_bag:
+    <nobr>(</nobr>
+    % for i in range(len(bag)):
+        % if i == len(bag)-1:
+            <nobr>'{{bag[len(bag)-1]}}'),</nobr>
+        % else:
+            <nobr>'{{bag[i]}}',</nobr>
+        % end
+    % end
+    <br>
+    <!---下記のようにリンクを作って飛ぶとブロックされるのでコメントアウトしました。-->
+    <!---<p><a href='{{bag[len(bag)-1]}}'>商品ページに飛ぶ</a></p>--->
+    <!---<br>--->
 % end
 </ul>
+　<!--自戒：ここから上はインデントしないようにする -->
+</div>
+
+
+<div class="now_list">
+<h3>最新のバッグリスト</h3>
+<p>商品数は{{count_now_bags_list}}</p>
+　<!--自戒：ここから下はインデントしないようにする -->
+<ul>
+% for bag in now_bags_list:
+    <nobr>(</nobr>
+    % for i in range(len(bag)):
+        % if i == len(bag)-1:
+            <nobr>'{{bag[len(bag)-1]}}'),</nobr>
+        % else:
+            <nobr>'{{bag[i]}}',</nobr>
+        % end
+    % end
+    <br>
+    <!---下記のようにリンクを作って飛ぶとブロックされるのでコメントアウトしました。-->
+    <!---<p><a href='{{bag[len(bag)-1]}}'>商品ページに飛ぶ</a></p>--->
+    <!---<br>--->
+% end
+</ul>
+　<!--自戒：ここから上はインデントしないようにする -->
+</div>
+
+<div class="previous_list">
+<h3>前回時点のバッグリスト</h3>
+<p>商品数は{{count_previous_bags_list}}</p>
+<!--自戒：ここから下はインデントしないようにする -->
+<ul>
+% for bag in previous_bags_list:
+    <nobr>(</nobr>
+    % for i in range(len(bag)):
+        % if i == len(bag)-1:
+            <nobr>'{{bag[len(bag)-1]}}'),</nobr>
+        % else:
+            <nobr>'{{bag[i]}}',</nobr>
+        % end
+    % end
+    <br>
+% end
+</ul>
+<!--自戒：ここから上はインデントしないようにする -->
+</div>
 
 </body>
 </html>

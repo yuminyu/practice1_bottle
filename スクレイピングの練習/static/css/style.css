@@ -1,3 +1,14 @@
-h4{
-    color:yellow;
+
+
+.now_list{
+    color:red;
 }
+
+.previous_list{
+    color:black;
+}
+
+ul{
+    list-style: none;
+}
+
