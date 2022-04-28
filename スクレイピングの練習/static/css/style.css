@@ -1,14 +1,25 @@
 
+ul{
+    list-style: none;
+}
+
+
+
+.output{
+    overflow: scroll;
+}
+
+.latest_list{
+    color:red;
+}
+
 
 .now_list{
-    color:red;
+    color:black;
 }
 
 .previous_list{
     color:black;
 }
 
-ul{
-    list-style: none;
-}
 
